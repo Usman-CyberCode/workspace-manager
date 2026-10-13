@@ -6,7 +6,7 @@ A production-quality **Workspace Manager SaaS** built with Next.js App Router, P
 
 - Marketing landing page with product sections and CTA
 - Email/password authentication (sign up, sign in, sign out)
-- Protected dashboard routes with middleware and server-side authorization
+- Protected dashboard routes with Next.js proxy and server-side authorization
 - Multi-workspace support with role-based access (`OWNER`, `ADMIN`, `MEMBER`)
 - Projects CRUD with list/grid views, search, and status filters
 - Tasks CRUD with priorities, due dates, assignees, search/filters, and Kanban columns
