@@ -116,7 +116,7 @@ Invitations use secure token links (`/settings?invite=...`) that must be opened 
 2. Import the project in Vercel.
 3. Add environment variables: `DATABASE_URL`, `AUTH_SECRET`, `AUTH_URL`.
 4. Use a hosted PostgreSQL provider (Neon/Supabase/Vercel Postgres).
-5. Run migrations against production (`npx prisma migrate deploy`) via CI or a one-off command.
+5. Run migrations against production (`npm run db:deploy`) via CI or a one-off command.
 6. Deploy.
 
 `postinstall` runs `prisma generate` so the client is available during builds.
@@ -128,7 +128,7 @@ src/
   app/                 # App Router pages (marketing, auth, dashboard)
   components/          # UI, layout, feature components
   lib/                 # Auth, Prisma, validations, server actions
-  middleware.ts        # Route protection
+  proxy.ts             # Route protection (Next.js 16)
 prisma/
   schema.prisma        # Data models
   seed.ts              # Optional demo seed
@@ -142,6 +142,7 @@ prisma/
 | Auth redirect loops | Ensure `AUTH_SECRET` and `AUTH_URL` are set |
 | Build fails on Prisma | Run `npm run db:generate` |
 | Invitation link fails | Sign in with the invited email before accepting |
+| PostgreSQL is not installed | Create a database on Neon/Supabase (or local Postgres) and set `DATABASE_URL`. The app structure is complete, but persistence and auth will not work until the database is connected. |
 
 ## Suggested future improvements
 
