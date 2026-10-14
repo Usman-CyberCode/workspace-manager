@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({
                     className="flex flex-col gap-1 rounded-lg border border-border/60 bg-background/30 px-3 py-2 sm:flex-row sm:items-center sm:justify-between"
                   >
                     <div>
-                      <p className="font-medium">{task.title}</p>
+                      <p className="font-medium">{task.title}.hello world</p>
                       <p className="text-xs text-muted-foreground">
                         {task.assignee?.name ?? task.assignee?.email ?? "Unassigned"} ·{" "}
                         Due {formatDate(task.dueDate)}
